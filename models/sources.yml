@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: netflix
+    database: netflix
+    schema: raw
+    tables:
+      - name: movies
+        description: "A table containing information about movies available on Netflix."
+        columns:
+          - name: movie_id
+            description: "Unique identifier for each movie."
+            tests:
+              - not_null
+              - unique
+          - name: title
+            description: "The title of the movie."
+            tests:
+              - not_null
+          - name: release_year
+            description: "The year the movie was released."
+            tests:
+              - not_null
+          - name: genre
+            description: "The genre of the movie."
